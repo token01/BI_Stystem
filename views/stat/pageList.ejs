@@ -5,58 +5,73 @@
 </head>
 <body>
 <% include ../comm/body_header.ejs %>
-<div class="am-cf am-padding">
-    <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">排行</strong>
-    </div>
-</div>
-
-
-<div class="am-cf am-padding">
-    <form action="/stat/pageList" method="post" class="am-form user-account-form">
-        <input type="text" name="startDate" id="startDate" class="am-form-field user-account-form-date"
-               value="<%= startDate %>">&nbsp;-&nbsp;
-        <input type="text" name="endDate" id="endDate" class="am-form-field" value="<%= endDate %>">
-
-        <div class="am-cf" style="margin-top: 10px;">
-            <input type="submit" name="" value="查 询" class="am-btn am-btn-primary am-btn-sm am-fl">
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i> <a href="index.html">首页</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <small><%= title %></small>
+                    </li>
+                </ol>
+            </div>
         </div>
-    </form>
-</div>
-<div class="am-g">
-
-    <div class="am-u-sm-12"style="height: 450%">
-        <form class="am-form">
-            <table class="am-table am-table-striped am-table-hover table-main">
-                <thead>
-                <tr>
-                    <th class="table-title">用户名</th>
-                    <th class="table-title"><%= result.propertyName %></th>
-                </tr>
-                </thead>
-                <tbody>
-                <% for(var i = 0; i < result.length; i++) { %>
-                <tr>
-                    <td><%= result[i].nickname %></td>
-                    <td>
-                        <%= result[i].propertyCount %>
-                    </td>
-                </tr>
-                <% } %>
-                </tbody>
-            </table>
-            <div class="am-cf">
-                共 <%= result.count %> 条记录
-                <div class="am-fr">
-                    <%- result.pageStr %>
+        <div class="row">
+            <div class="col-xl-12">
+                <h3 class="page-header">选择时间</h3>
+                <div id="datetimepicker" class="input-append date">
+                    <form action="/stat/lineTemplate" method="post">
+                        <input type="text" name="startDate" id="startDate"
+                               value="<%= startDate %>">&nbsp;-&nbsp;
+                        <input type="text" name="endDate" id="endDate" value="<%= endDate %>">
+                        &nbsp;
+                        <input type="submit" name="" value="查 询" class="btn btn-success">
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
+        <div class="row"> &nbsp;</div>
+
+        <div class="col-xl-6 col-lg-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th><%= result.propertyName %></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var i = 0; i < result.length; i++) { %>
+                    <tr>
+                        <td><%= result[i].nickname %></td>
+                        <td>
+                            <%= result[i].propertyCount %>
+                        </td>
+                    </tr>
+                    <% } %>
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination">
+                        共 <%= result.count %> 条记录
+                        <%- result.pageStr %>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
     </div>
 </div>
 
 <% include ../comm/body_footer.ejs %>
+</div>
 <script type="text/javascript">
-//日期插件配置
+    //日期插件配置
     $('#startDate,#endDate').datetimepicker({
         timepicker: false,
         format: 'Y-m-d',
