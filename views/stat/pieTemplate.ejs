@@ -7,15 +7,12 @@
 <% include ../comm/body_header.ejs %>
 <div class="am-cf am-padding">
     <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> /
-        <small><%=title%></small>
+        <small><%= title %></small>
     </div>
 </div>
 
 <div class="am-cf am-padding">
     <form action="/stat/lineTemplate" method="post" class="am-form user-account-form">
-        <input type="text" name="startDate" id="startDate" class="am-form-field user-account-form-date"
-               value="<%= startDate %>">&nbsp;-&nbsp;
-        <input type="text" name="endDate" id="endDate" class="am-form-field" value="<%= endDate %>">
 
         <div class="am-cf" style="margin-top: 10px;">
             <input type="submit" name="" value="查 询" class="am-btn am-btn-primary am-btn-sm am-fl">
@@ -32,9 +29,8 @@
 <a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu"
    data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
 
-
 <% include ../comm/body_footer.ejs %>
-
+<script src="/public/libs/echart/macarons.js"></script>
 <script type="text/javascript">
     //日期插件配置
     $('#startDate,#endDate').datetimepicker({
@@ -42,7 +38,6 @@
         format: 'Y-m-d',
         formatDate: 'Y-m-d'
     });
-
     // 路径配置
     require.config({
         paths: {
@@ -54,96 +49,48 @@
     require(
             [
                 'echarts',
-                'echarts/chart/line',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
+                'echarts/chart/pie',   // 按需加载所需图表，如需动态类型切换功能，别忘了同时加载相应图表
                 'echarts/chart/bar' // 使用柱状图就加载bar模块，按需加载
+
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main'));
-                var option = {
-                    title: {
-                        text: '<%=title%>',
-                        subtext: '---'
+                var myChart = ec.init(document.getElementById('main'),'macarons');
+
+               var option = {
+                    title : {
+                        text: '某站点用户访问来源',
+                        subtext: '纯属虚构',
+                        x:'center'
                     },
-                    tooltip: {
-                        trigger: 'axis'
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
                     },
-                    legend: {
-                        data: ['日增', '日活用户', '日活人次']
-                    },
-                    toolbox: {
-                        show: true,
-                        feature: {
-                            mark: {show: true},
-                            dataView: {show: true, readOnly: false},
-                            magicType: {show: true, type: ['pie', 'bar']},
-                            restore: {show: true},
-                            saveAsImage: {show: true}
-                        }
-                    },
-                    calculable: true,
-                    xAxis: [
+//                    legend: {
+//                        orient: 'vertical',
+////                        left: '',
+//                        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+//                    },
+                    series : [
                         {
-                            type: 'category',
-                            boundaryGap: false,
-                            data: <%- JSON.stringify(result.dates) %>
-                        }
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value',
-                            axisLabel: {
-                                formatter: '{value} 个'
-                            }
-                        }
-                    ],
-                    series: [
-                        {
-                            name: '日增',
-                            type: 'line',
-                            data: <%- JSON.stringify(result.totalnum) %>,
-                            markPoint: {
-                                data: [
-                                    {type: 'max', name: '最大值'},
-                                    {type: 'min', name: '最小值'}
-                                ]
-                            },
-                            markLine: {
-                                data: [
-                                    {type: 'average', name: '平均值'}
-                                ]
-                            }
-                        },
-                        {
-                            name: '日活用户',
-                            type: 'line',
-                            data: <%- JSON.stringify(result.activenum) %>,
-                            markPoint: {
-                                data: [
-                                    {type: 'max', name: '最大值'},
-                                    {type: 'min', name: '最小值'}
-                                ]
-                            },
-                            markLine: {
-                                data: [
-                                    {type: 'average', name: '平均值'}
-                                ]
-                            }
-                        },
-                        {
-                            name: '日活人次',
-                            type: 'line',
-                            data: <%- JSON.stringify(result.activetimes) %>,
-                            markPoint: {
-                                data: [
-                                    {type: 'max', name: '最大值'},
-                                    {type: 'min', name: '最小值'}
-                                ]
-                            },
-                            markLine: {
-                                data: [
-                                    {type: 'average', name: '平均值'}
-                                ]
+                            name: '访问来源',
+                            type: 'pie',
+                            radius : '55%',
+                            center: ['50%', '60%'],
+                            data:[
+                                {value:335, name:'直接访问'},
+                                {value:310, name:'邮件营销'},
+                                {value:234, name:'联盟广告'},
+                                {value:135, name:'视频广告'},
+                                {value:1548, name:'搜索引擎'}
+                            ],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
                             }
                         }
                     ]
