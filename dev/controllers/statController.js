@@ -1,6 +1,3 @@
-/**
- * Created by zhangtao on 2015/4/27.
- */
 var dbService = require('../lib/dbService');
 var pageService = require('../lib/pageService');
 var moment = require('moment');

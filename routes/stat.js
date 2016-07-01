@@ -10,7 +10,6 @@ router.all(['/lineTemplate', '/'], auth.userRequired, statController.line_templa
 /* 获取用户活动排名 */
 router.all('/pageList', auth.userRequired, statController.page_list);
 
-
 /* 获取新增用户数据 */
 router.all(['/pieTemplate', '/'], auth.userRequired, statController.pie_template);
 
