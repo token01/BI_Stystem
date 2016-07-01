@@ -1,6 +1,3 @@
-/**
- * Created by zhangtao on 2015/4/27.
- */
 var service = {};
 var dbService = require('../lib/dbService');
 

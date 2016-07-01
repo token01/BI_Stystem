@@ -1,6 +1,3 @@
-/**
- * Created by zhangtao on 2015/4/15.
- */
 var db = {};
 
 db.url = 'localhost';

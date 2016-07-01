@@ -1,6 +1,3 @@
-/**
- * Created by Administrator on 2014/7/23.
- */
 var mysql = require('mysql');
 var config_db = require('../../config/config_db');
 
