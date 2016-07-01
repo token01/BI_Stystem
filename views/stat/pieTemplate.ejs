@@ -5,32 +5,55 @@
 </head>
 <body>
 <% include ../comm/body_header.ejs %>
-<div class="am-cf am-padding">
-    <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> /
-        <small><%= title %></small>
-    </div>
-</div>
 
-<div class="am-cf am-padding">
-    <form action="/stat/lineTemplate" method="post" class="am-form user-account-form">
-
-        <div class="am-cf" style="margin-top: 10px;">
-            <input type="submit" name="" value="查 询" class="am-btn am-btn-primary am-btn-sm am-fl">
+<div id="page-wrapper" >
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i> <a href="index.html">首页</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <small><%= title %></small>
+                    </li>
+                </ol>
+            </div>
         </div>
-    </form>
-</div>
-<div class="am-cf am-padding">
-    <div class="am-g">
 
-        <div id="main" style="height: 400px"></div>
-
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card card-block card-inverse">
+                    <div id="main" style="height: 450px"></div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu"
-   data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+<!--<div class="am-cf am-padding">-->
+    <!--<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> /-->
+        <!--<small><%= title %></small>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div class="am-cf am-padding">-->
+    <!--<form action="/stat/lineTemplate" method="post" class="am-form user-account-form">-->
+
+        <!--<div class="am-cf" style="margin-top: 10px;">-->
+            <!--<input type="submit" name="" value="查 询" class="am-btn am-btn-primary am-btn-sm am-fl">-->
+        <!--</div>-->
+    <!--</form>-->
+<!--</div>-->
+<!--<div class="am-cf am-padding">-->
+    <!--<div class="am-g">-->
+
+        <!--<div id="main" style="height: 400px"></div>-->
+
+    <!--</div>-->
+<!--</div>-->
 
 <% include ../comm/body_footer.ejs %>
-<script src="/public/libs/echart/macarons.js"></script>
+<script src="/public/libs/echart/dark.js"></script>
 <script type="text/javascript">
     //日期插件配置
     $('#startDate,#endDate').datetimepicker({
@@ -55,7 +78,7 @@
             ],
             function (ec) {
                 // 基于准备好的dom，初始化echarts图表
-                var myChart = ec.init(document.getElementById('main'),'macarons');
+                var myChart = ec.init(document.getElementById('main'),'dark');
 
                var option = {
                     title : {

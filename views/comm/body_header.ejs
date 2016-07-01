@@ -2,6 +2,7 @@
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
     以获得更好的体验！</p>
 <![endif]-->
+
 <style>
     #header {
         background: #0f9fdb;
@@ -15,60 +16,234 @@
     }
 
 </style>
-<header class="am-topbar admin-header" id="header">
-    <div class="am-topbar-brand">
-        <strong> 统计系统</strong>
-        <small></small>
-    </div>
+<!--<header class="am-topbar admin-header" id="header">-->
+<!--<div class="am-topbar-brand">-->
+<!--<strong> 统计系统</strong>-->
+<!--<small></small>-->
+<!--</div>-->
 
-    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
-            data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span
-                class="am-icon-bars"></span></button>
+<!--<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"-->
+<!--data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span-->
+<!--class="am-icon-bars"></span></button>-->
 
-    <div class="am-collapse am-topbar-collapse" id="collapse">
+<!--<div class="am-collapse am-topbar-collapse" id="collapse">-->
 
-        <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list" id="admin-list">
-            <li class="am-dropdown" data-am-dropdown>
-                <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-                    <span class="am-icon-users"></span> <font color="white">管理员</font> <span
-                            class="am-icon-caret-down"></span>
-                </a>
-                <ul class="am-dropdown-content">
-                    <li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>
+<!--<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list" id="admin-list">-->
+<!--<li class="am-dropdown" data-am-dropdown>-->
+<!--<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">-->
+<!--<span class="am-icon-users"></span> <font color="white">管理员</font> <span-->
+<!--class="am-icon-caret-down"></span>-->
+<!--</a>-->
+<!--<ul class="am-dropdown-content">-->
+<!--<li><a href="/logout"><span class="am-icon-power-off"></span> 退出</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+<!--<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span-->
+<!--class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>-->
+<!--</ul>-->
+<!--</div>-->
+
+<!--</header>-->
+<div id="wrapper">
+    <nav class="navbar navbar-dark bg-inverse navbar-fixed-top">
+        <!--&lt;!&ndash; Top Menu Items &ndash;&gt;-->
+        <!--<div class="am-topbar-brand">-->
+        <!--<strong> 统计系统</strong>-->
+        <!--<small></small>-->
+        <!--</div>-->
+        <div class="navbar-header">
+            <button class="navbar-toggler hidden-sm-up pull-sm-right" type="button" data-toggle="collapse"
+                    data-target=".navbar-ex1-collapse">
+                &#9776;
+            </button>
+            <a class="navbar-brand" href="index.html"><strong>统计系统</strong></a>
+        </div>
+        <ul class="nav navbar-nav top-nav navbar-right pull-xs-right">
+            <!--<li class="dropdown nav-item active">-->
+            <!--&lt;!&ndash; <div class="dropdown"> &ndash;&gt;-->
+            <!--<a class="nav-link dropdown-toggle" href="javascript:;" id="dropdownMenu4" data-toggle="dropdown"-->
+            <!--aria-haspopup="true" aria-expanded="false"><i class="fa fa-envelope"></i> <b class="caret"></b><span-->
+            <!--class="sr-only">(current)</span></a>-->
+            <!--<ul class="dropdown-menu message-dropdown">-->
+            <!--<li class="dropdown-item message-preview">-->
+            <!--<a href="javascript:;">-->
+            <!--<div class="media">-->
+            <!--<span class="media-left">-->
+            <!--<img class="media-object" src="http://placehold.it/50x50" alt="">-->
+            <!--</span>-->
+            <!--<div class="media-body">-->
+            <!--<h5 class="media-heading"><strong>管理员</strong>-->
+            <!--</h5>-->
+            <!--<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item message-preview">-->
+            <!--<a href="javascript:;">-->
+            <!--<div class="media">-->
+            <!--<span class="media-left">-->
+            <!--<img class="media-object" src="http://placehold.it/50x50" alt="">-->
+            <!--</span>-->
+            <!--<div class="media-body">-->
+            <!--<h5 class="media-heading"><strong>John Smith</strong>-->
+            <!--</h5>-->
+            <!--<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item message-preview">-->
+            <!--<a href="javascript:;">-->
+            <!--<div class="media">-->
+            <!--<span class="media-left">-->
+            <!--<img class="media-object" src="http://placehold.it/50x50" alt="">-->
+            <!--</span>-->
+            <!--<div class="media-body">-->
+            <!--<h5 class="media-heading"><strong>John Smith</strong>-->
+            <!--</h5>-->
+            <!--<p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>-->
+            <!--<p>Lorem ipsum dolor sit amet, consectetur...</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item message-footer">-->
+            <!--<a href="javascript:;">Read All New Messages</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!-- </div> -->
+            <!--</li>-->
+            <!--<li class="dropdown nav-item">-->
+            <!--&lt;!&ndash; <div class="dropdown"> &ndash;&gt;-->
+            <!--<a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"-->
+            <!--aria-expanded="false"><i class="fa fa-bell"></i> <b class="caret"></b><span-->
+            <!--class="sr-only">(current)</span></a>-->
+            <!--<ul class="dropdown-menu alert-dropdown">-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-default"> Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-primary"> Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-success">Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-info"> Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-warning"> Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">Alert Name <span class="label label-danger"> Alert Badge</span></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown-divider"></li>-->
+            <!--<li class="dropdown-item">-->
+            <!--<a href="javascript:;">View All</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--&lt;!&ndash; </div> &ndash;&gt;-->
+            <!--</li>-->
+            <li class="dropdown nav-item">
+                <a href="javascript:;" class="nav-link dropdown-toggle" data-toggle="dropdown"><i
+                            class="fa fa-user"></i>管理员<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <a href="javascript:;"><i class="fa fa-fw fa-user"></i> 设置</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="javascript:;"><i class="fa fa-fw fa-envelope"></i> 收件箱</a>
+                    </li>
+                    <li class="dropdown-item">
+                        <a href="javascript:;"><i class="fa fa-fw fa-gear"></i> 设置</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-item">
+                        <a href="/logout"><i class="fa fa-fw fa-power-off"></i> 退出</a>
+                    </li>
                 </ul>
             </li>
-            <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span
-                            class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
         </ul>
-    </div>
-</header>
-<div class="am-cf admin-main">
-    <!-- sidebar start -->
-    <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
-        <div class="am-offcanvas-bar admin-offcanvas-bar">
-            <ul class="am-list admin-sidebar-list">
-                <li><a href="/"><span class="am-icon-home"></span> 首页</a></li>
-                <li class="admin-parent">
-                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav-stat'}"><span class="am-icon-file"></span>统计模块 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                    <ul class="am-list am-collapse admin-sidebar-sub <% if(sidebar == 'stat'){ %>am-in<% } %>"
-                        id="collapse-nav-stat">
-                        <li><a href="/stat" class="am-cf">
-                                <span class="am-icon-calendar">条形图</span></a></li>
-                        <li><a href="/stat/pageList"><span class="am-icon-calendar"></span> 分页列表</a></li>
-                    </ul>
-                    <a class="am-cf" data-am-collapse="{target: '#collapse-nav-stat'}"><span class="am-icon-file"></span>网站分析 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                    <ul class="am-list am-collapse admin-sidebar-sub <% if(sidebar == 'stat'){ %>am-in<% } %>"
-                        id="collapse-nav-stat">
-                        <li><a href="/stat/pieTemplate" class="am-cf"><span class="am-icon-calendar">饼图</span></a></li>
-                        <li><a href="/stat/pageList"><span class="am-icon-calendar"></span> 分页列表</a></li>
+
+
+        <!--<div class="am-cf admin-main">-->
+        <!--&lt;!&ndash; sidebar start &ndash;&gt;-->
+        <!--<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">-->
+        <!--<div class="am-offcanvas-bar admin-offcanvas-bar">-->
+        <!--<ul class="am-list admin-sidebar-list">-->
+        <!--<li><a href="/"><span class="am-icon-home"></span> 首页</a></li>-->
+        <!--<li class="admin-parent">-->
+        <!--<a class="am-cf" data-am-collapse="{target: '#collapse-nav-stat'}"><span-->
+        <!--class="am-icon-file"></span>统计模块 <span-->
+        <!--class="am-icon-angle-right am-fr am-margin-right"></span></a>-->
+        <!--<ul class="am-list am-collapse admin-sidebar-sub <% if(sidebar == 'stat'){ %>am-in<% } %>"-->
+        <!--id="collapse-nav-stat">-->
+        <!--<li><a href="/stat" class="am-cf">-->
+        <!--<span class="am-icon-calendar">条形图</span></a></li>-->
+        <!--<li><a href="/stat/pageList"><span class="am-icon-calendar"></span> 分页列表</a></li>-->
+        <!--</ul>-->
+        <!--<a class="am-cf" data-am-collapse="{target: '#collapse-nav-stat'}"><span-->
+        <!--class="am-icon-file"></span>网站分析 <span-->
+        <!--class="am-icon-angle-right am-fr am-margin-right"></span></a>-->
+        <!--<ul class="am-list am-collapse admin-sidebar-sub <% if(sidebar == 'stat'){ %>am-in<% } %>"-->
+        <!--id="collapse-nav-stat">-->
+        <!--<li><a href="/stat/pieTemplate" class="am-cf"><span class="am-icon-calendar">饼图</span></a></li>-->
+        <!--<li><a href="/stat/pageList"><span class="am-icon-calendar"></span> 分页列表</a></li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; sidebar end &ndash;&gt;-->
+
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+
+        <div class="collapse navbar-collapse navbar-toggleable-sm navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav list-group">
+                <li class="list-group-item">
+                    <a href="index.html"><i class="fa fa-fw fa-dashboard"></i>指示板</a>
+                </li>
+                <!--<li class="list-group-item">-->
+                <!--<a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>-->
+                <!--</li>-->
+                <li class="list-group-item">
+                    <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i
+                                class="fa fa-fw fa-arrows-v"></i>
+                        网站统计 <i class="fa fa-fw fa-caret-down"></i></a>
+                    <ul id="demo" class="list-group collapse">
+                        <li class="list-group-item">
+                            <a href="/stat/lineTemplate">线性统计模型</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/stat/pageList">表格统计模型</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="/stat/pieTemplate">饼图统计模型</a>
+                        </li>
                     </ul>
                 </li>
+                <!--<li class="list-group-item">-->
+                <!--<a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>-->
+                <!--</li>-->
+                <!--<li class="list-group-item">-->
+                <!--<a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>-->
+                <!--</li>-->
             </ul>
         </div>
-    </div>
-    <!-- sidebar end -->
-
-    <!-- content start -->
-    <div class="admin-content">
-
-
+    </nav>
